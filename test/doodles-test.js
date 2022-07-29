@@ -84,7 +84,7 @@ describe('Doodles', function () {
       //assert
       expect(await doodlesContract.ownerOf(0)).to.equal(addr1.address)
       await expect(doodlesContract.ownerOf(1)).to.be.revertedWith(
-        'URI query for nonexistent token',
+        'ERC721: owner query for nonexistent token',
       )
     })
   })
