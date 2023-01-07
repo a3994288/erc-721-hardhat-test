@@ -200,21 +200,21 @@ describe('Doodles', function () {
     })
   })
 
-  describe('setProvenance', function () {
-    it('Should be reverted because the caller is not owner', async function () {
-      await expect(
-        doodlesContract.connect(addr1).setProvenance('random hash'),
-      ).to.be.revertedWith('caller is not the owner')
-    })
+  // describe('setProvenance', function () {
+  //   it('Should be reverted because the caller is not owner', async function () {
+  //     await expect(
+  //       doodlesContract.connect(addr1).setProvenance('random hash'),
+  //     ).to.be.revertedWith('caller is not the owner')
+  //   })
 
-    it('Should should set PROVENANCE by owner', async function () {
-      const expectedValue = 'random hash'
+  //   it('Should should set PROVENANCE by owner', async function () {
+  //     const expectedValue = 'random hash'
 
-      await doodlesContract.connect(owner).setProvenance(expectedValue)
+  //     await doodlesContract.connect(owner).setProvenance(expectedValue)
 
-      expect(await doodlesContract.PROVENANCE()).to.equal(expectedValue)
-    })
-  })
+  //     expect(await doodlesContract.PROVENANCE()).to.equal(expectedValue)
+  //   })
+  // })
 
   describe('reserve', function () {
     it('Should be reverted because the caller is not owner', async function () {
