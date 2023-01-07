@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
@@ -7,7 +6,6 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
 contract Doodles is ERC721, ERC721Enumerable, Ownable {
-    string public PROVENANCE;
     bool public saleIsActive = false;
     string private _baseURIextended;
 
@@ -83,10 +81,6 @@ contract Doodles is ERC721, ERC721Enumerable, Ownable {
 
     function _baseURI() internal view virtual override returns (string memory) {
         return _baseURIextended;
-    }
-
-    function setProvenance(string memory provenance) public onlyOwner {
-        PROVENANCE = provenance;
     }
 
     function reserve(uint256 n) public onlyOwner {
